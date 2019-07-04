@@ -1,0 +1,252 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "9341599e-4802-4474-a9ef-2b63673d8cd5": {
+        "id": "9341599e-4802-4474-a9ef-2b63673d8cd5",
+        "parent": null,
+        "name": "hiru_resourcetest",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "ad654d9a-7c75-4869-ac3f-c8a2263df168",
+          "540720c8-a9ff-4999-8c04-88e1fffec07d",
+          "2aab16d7-13f5-4148-b555-acc1dc664460"
+        ],
+        "isRemovable": false,
+        "filePath": "hiru_resourcetest"
+      },
+      "ad654d9a-7c75-4869-ac3f-c8a2263df168": {
+        "id": "ad654d9a-7c75-4869-ac3f-c8a2263df168",
+        "parent": "9341599e-4802-4474-a9ef-2b63673d8cd5",
+        "name": "__init__.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru_resourcetest/__init__.py",
+        "code": ""
+      },
+      "540720c8-a9ff-4999-8c04-88e1fffec07d": {
+        "id": "540720c8-a9ff-4999-8c04-88e1fffec07d",
+        "parent": "9341599e-4802-4474-a9ef-2b63673d8cd5",
+        "name": "directsms.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru_resourcetest/directsms.js",
+        "code": "let AWS = require('aws-sdk');\nconst sns = new AWS.SNS();\n\nexports.handler = function(event, context, callback) {\n    sns.publish({\n  Message: 'test',\n  Subject: 'test',\n  MessageAttributes: {},\n  MessageStructure: 'String',\n  TopicArn: 'arn:aws:sns:us-east-1:318300609668:TestSNS'\n}).promise()\n                .then(data => {\n                    console.log(data);\n                    callback(null, data);\n                    // your code goes here\n                })\n                .catch(err => {\n                    console.log(err);\n                    callback(null, err);\n                    // error handling goes here\n                });\n    \n    \n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "apigusEast1TestAPIhirusnscheckget",
+            "config": {}
+          }
+        ],
+        "testCases": {
+          "7fdf4c7b-0ce8-4bb0-9dcf-76454fc88087": {
+            "id": "7fdf4c7b-0ce8-4bb0-9dcf-76454fc88087",
+            "name": "Unnamed event",
+            "functionId": "540720c8-a9ff-4999-8c04-88e1fffec07d",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      },
+      "2aab16d7-13f5-4148-b555-acc1dc664460": {
+        "id": "2aab16d7-13f5-4148-b555-acc1dc664460",
+        "parent": "9341599e-4802-4474-a9ef-2b63673d8cd5",
+        "name": "d",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru_resourcetest/d"
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "9341599e-4802-4474-a9ef-2b63673d8cd5",
+    "openFiles": [
+      "540720c8-a9ff-4999-8c04-88e1fffec07d"
+    ],
+    "currentFileId": "540720c8-a9ff-4999-8c04-88e1fffec07d",
+    "resources": {
+      "s3hirutest123": {
+        "name": "s3hirutest123",
+        "type": "S3",
+        "config": {
+          "mode": 1,
+          "bucket": {
+            "region": "us-east-1",
+            "name": "hiru.test123"
+          }
+        }
+      },
+      "snsusEast1TestSNS": {
+        "name": "snsusEast1TestSNS",
+        "type": "SNS",
+        "config": {
+          "topicMode": 1,
+          "topicName": "TestSNS",
+          "topicArn": "arn:aws:sns:us-east-1:318300609668:TestSNS",
+          "topicRegion": "us-east-1",
+          "snsType": 0,
+          "subscriptions": [
+            {
+              "type": "sms",
+              "endpoint": "+940772445224"
+            },
+            {
+              "type": "sms",
+              "endpoint": "+94715397214"
+            },
+            {
+              "type": "email",
+              "endpoint": "hirudinee@adroitlogic.com"
+            }
+          ]
+        }
+      },
+      "apigusEast1TestAPIhiruget": {
+        "name": "apigusEast1TestAPIhiruget",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "TestAPI",
+          "apiId": "0itznun7w3",
+          "endpointType": "EDGE",
+          "rootResourceId": "h2lelj6j7k",
+          "existingResources": {
+            "/hiru/test": "2b8zt0",
+            "/hiru": "3nc52b",
+            "/hiru/sample": "4226gg",
+            "/MyLambda": "98nqbj",
+            "/": "h2lelj6j7k",
+            "/testtwospeciallambda": "q4szm3",
+            "/testtwospecialkumutest": "wey3lk"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/hiru",
+          "resourceName": "hiru",
+          "resourceId": "3nc52b",
+          "restMethod": "GET",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "Test",
+          "stageDeploymentId": "yxex02",
+          "mode": 1
+        }
+      },
+      "apigusEast1TestAPIhirusnscheckget": {
+        "name": "apigusEast1TestAPIhirusnscheckget",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "TestAPI",
+          "apiId": "0itznun7w3",
+          "endpointType": "EDGE",
+          "rootResourceId": "h2lelj6j7k",
+          "existingResources": {
+            "/hiru/test": "2b8zt0",
+            "/hiru": "3nc52b",
+            "/hiru/sample": "4226gg",
+            "/MyLambda": "98nqbj",
+            "/": "h2lelj6j7k",
+            "/testtwospeciallambda": "q4szm3",
+            "/testtwospecialkumutest": "wey3lk"
+          },
+          "resourceMode": 0,
+          "resourceName": "hiru/snscheck",
+          "resourcePath": "/hiru/snscheck",
+          "restMethod": "GET",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "Test",
+          "stageDeploymentId": "orl83y",
+          "mode": 1
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      },
+      {
+        "lambdaId": "7788efc4-7757-4df4-93c9-a93b7e17e7fb",
+        "varKey": "PYTHONPATH",
+        "varValue": "/var/runtime:/var/task/hiru_resourcetest",
+        "shouldPersist": true,
+        "displayOnly": false,
+        "editable": true
+      },
+      {
+        "lambdaId": "f0afa254-99c2-4c22-9cdf-4bbe40bde2e1",
+        "varKey": "PYTHONPATH",
+        "varValue": "/var/runtime:/var/task/hiru_resourcetest",
+        "shouldPersist": true,
+        "displayOnly": false,
+        "editable": true
+      },
+      {
+        "lambdaId": "f5d21a01-b481-4c5e-8e22-db9cecadd85d",
+        "varKey": "PYTHONPATH",
+        "varValue": "/var/runtime:/var/task/hiru_resourcetest",
+        "shouldPersist": true,
+        "displayOnly": false,
+        "editable": true
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "boto3": {
+          "name": "boto3",
+          "language": "python",
+          "version": "1.9.6",
+          "dev": true,
+          "notRemovable": false
+        },
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "hiru_resourcetest",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1562239897387
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "hiru_resourcetest",
+      "url": "https://github.com/HirudineeADRT/testhiru"
+    }
+  }
+}
